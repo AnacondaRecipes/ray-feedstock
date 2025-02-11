@@ -13,10 +13,10 @@ build:
 
 requirements:
   host:
-    - python ==3.11
+    - python
     - pip
   run:
-    - python ==3.11
+    - python
     - numpy  # Ray requires numpy, add more dependencies as needed
 
 about:
