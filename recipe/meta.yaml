@@ -30,4 +30,3 @@ extra:
     reason: Dependency for vllm
   recipe-maintainers:
     - ianaobi
-    - bkreider
