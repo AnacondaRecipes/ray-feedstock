@@ -3,13 +3,21 @@ package:
   version: 2.42.0
 
 source:
-  url: https://files.pythonhosted.org/packages/54/1d/7338a8922fe39e4924d702c0bb70fe877f009e6437e59c86440f3e8d9ea2/ray-2.42.0-cp311-cp311-manylinux2014_x86_64.whl
-  sha256: e8924b6ed086655b2bf8b3ff29ac453d1e8aa7a4d6d2ce965bbaa5fb17d1364f
+  url: https://files.pythonhosted.org/packages/ec/20/7005bfdf75b9c1815b82cacb18dae1d40a1f8e02b78245aa707adcb27acb/ray-2.42.0-cp312-cp312-manylinux2014_x86_64.whl
+  sha256: e3ede0367ab28fbd868a22f4e4cdac44543c654e2cbc5a3b482178e7f725ea2c
 
 build:
   noarch: python
     # script: pip install --no-deps --ignore-installed {{ environ.get('PKG_NAME') }}-{{ environ.get('PKG_VERSION') }}-*.whl
   number: 0
+  missing_dso_whitelist:
+    - '*/libpthread.so.0'
+    - '*/libc.so.6'
+    - '*/librt.so.1'
+    - '*/libm.so.6'
+    - '*/libc.so.6'
+    - '*/ld-linux-x86-64.so.2'
+    - '*/libdl.so.2'
 
 requirements:
   host:
@@ -30,4 +38,3 @@ extra:
     reason: Dependency for vllm
   recipe-maintainers:
     - ianaobi
-    - bkreider
